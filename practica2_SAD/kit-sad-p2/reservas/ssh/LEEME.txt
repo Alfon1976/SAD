@@ -3,3 +3,21 @@
 
 Los .conf de esta carpeta se leen ANTES que /etc/ssh/sshd_config, y en SSH manda el PRIMER valor que encuentra.
 Después de cambiar algo:  ./lab.sh ssh
+
+
+
+# D1: El usuario root no puede iniciar sesión directamente por SSH
+PermitRootLogin no
+
+# D1b: Se prohíbe el acceso mediante contraseña tradicional
+PasswordAuthentication no
+
+# D1d: Límite estricto de un máximo de 3 intentos de autenticación
+MaxAuthTries 3
+
+# D1d: Desactivar el reenvío de la interfaz gráfica X11 por seguridad
+X11Forwarding no
+
+# D1e: Habilitar explícitamente el uso de llaves criptográficas (imprescindible)
+PubkeyAuthentication yes
+

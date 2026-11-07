@@ -9,6 +9,10 @@
 #
 #  👀 = hecho (léelo: te lo preguntarán).   ✍️ = tu turno (escribe la regla justo debajo).
 #  Cada regla lleva msg:"…" y un sid:… único (del 1000000 en adelante).
+
+alert tcp any any -> 198.51.100.254 22 (msg:"Ataque fuerza bruta SSH"; flags:S; threshold: type threshold, track by_src, count 10, seconds 60; sid:1000002; rev:1;)
+
+
 # ════════════════════════════════════════════════════════════════════════════════
 
 # 👀 C0 · Alguien de la calle hace ping a la bodega. Así se lee una regla:
