@@ -19,6 +19,11 @@ alert tcp any any -> 198.51.100.254 22 (msg:"Ataque fuerza bruta SSH"; flags:S; 
 #        alert  icmp  ORIGEN  ->  DESTINO  (opciones)
 alert icmp any any -> 198.51.100.254 any (msg:"LAB ping a la bodega desde la calle"; itype:8; sid:1000001; rev:1;)
 
+
+
+
+
+
 # ✍️ C1 · Fuerza bruta de SSH: avisa cuando una MISMA IP de la calle lanza MÁS DE 10 intentos de
 #         conexión (flags:S) al SSH de la bodega (puerto 22 de 198.51.100.254) en 60 segundos.
 #         Pistas: alert tcp … -> 198.51.100.254 22 (…; flags:S;
