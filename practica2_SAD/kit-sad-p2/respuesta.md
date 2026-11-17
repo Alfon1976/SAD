@@ -1,8 +1,10 @@
-Respuestas · Práctica 2 · Bodegas Atlántico
+
+
+# Respuestas · Práctica 2 · Bodegas Atlántico
 
     Rellena este fichero en tu ordenador. Va en la entrega (./lab.sh entregar) y en la defensa te pueden preguntar por él.
 
-Bloque A · Piensa como un atacante (nmap)
+# Bloque A · Piensa como un atacante (nmap)
 
 Starting Nmap 7.95 ( https://nmap.org ) at 2026-11-06 12:58 UTC
 Nmap scan report for sad-p2-fw.sad-p2_calle (198.51.100.254)
@@ -26,11 +28,11 @@ Desde la calle: ./lab.sh cliente y dentro nmap -Pn -p 22,80,443,5432,8080 198.51
 
 
 
-Bloque A · El contador
+# Bloque A · El contador
 
 Después de ./lab.sh comprobar, mira ./lab.sh ver. ¿Cuántos paquetes lleva el contador de A6? ¿Quién los ha mandado?
 
-Bloque B · La prueba del cifrado
+# Bloque B · La prueba del cifrado
 
 En el firewall (./lab.sh fw): tcpdump -ni wan host 198.51.100.62 -c 6. Mientras, en otra terminal, el comercial (./lab.sh comercial) hace curl http://172.16.10.20:8080. Pega lo que sale en el firewall:
 
@@ -49,7 +51,9 @@ En el firewall (./lab.sh fw): tcpdump -ni wan host 198.51.100.62 -c 6. Mientras,
 
 En dos líneas: ¿qué se ve por la calle y qué NO se ve?
 
-Bloque C · Para la defensa (C4)
+# Bloque C · Para la defensa (C4)
+
+### C4 Surica y WAF antes el mismo ataque
 
 Del mismo ataque (la inyección a la web): ¿qué ve el vigilante de la red (el IDS) y qué ve el portero de la web? ¿Por qué hacen falta los dos?
 
@@ -59,7 +63,7 @@ Portero de la web (WAF): Trabaja en capa 7 (HTTP). Como descifra el HTTPS, ve la
 
 ¿Por qué hacen falta los dos? Porque se complementan (defensa en profundidad): el WAF frena ataques web cifrados en tiempo real, mientras que el IDS vigila el resto de la red interna y protocolos (SSH, escaneos, movimiento lateral) donde el WAF no llega.
 
-Bloque D · La nota del servidor (D0 y D4)
+# Bloque D · La nota del servidor (D0 y D4)
 
 Nota del análisis antes de bastionar (D0):
 
